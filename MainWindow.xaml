@@ -6,44 +6,73 @@
         xmlns:local="clr-namespace:Tema3_FormularioStackPanel"
         mc:Ignorable="d"
         Title="Formulario" Height="334" Width="757" Icon="/assets/form.ico">
+
+    <Window.Resources>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Width" Value="100"/>
+            <Setter Property="Margin" Value="10"/>
+        </Style>
+        <Style TargetType="{x:Type StackPanel}">
+            <Setter Property="Margin" Value="0,0,0,10"/>
+        </Style>
+        <Style TargetType="{x:Type StackPanel}" x:Key="Botones" BasedOn="{StaticResource {x:Type StackPanel}}">
+            <Setter Property="Orientation" Value="Horizontal"/>
+            <Setter Property="HorizontalAlignment" Value="Right"/>
+        </Style>
+        <Style TargetType="{x:Type TextBlock}">
+            <Setter Property="Margin" Value="5,5,5,2"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontSize" Value="16"/>
+        </Style>
+        <Style TargetType="{x:Type TextBox}">
+            <Setter Property="Margin" Value="5,0,5,5"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+        </Style>
+        <Style TargetType="{x:Type TextBox}" x:Key="PanelEscritura" BasedOn="{StaticResource {x:Type TextBox}}">
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="Width" Value="500"/>
+        </Style>
+    </Window.Resources>
+    
     <StackPanel Margin="10">
 
-        <StackPanel x:Name="panelNombre" Margin="0,0,0,10">
+        <StackPanel x:Name="panelNombre">
             <StackPanel.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF5DDC14" Offset="0"/>
                     <GradientStop Color="#FFFCFFFB" Offset="1"/>
                 </LinearGradientBrush>
             </StackPanel.Background>
-            <TextBlock Margin="5,5,5,2" VerticalAlignment="Center" FontWeight="Bold" FontSize="16">Nombre</TextBlock>
-            <TextBox Margin="5,0,5,5" VerticalAlignment="Top"></TextBox>
+            <TextBlock>Nombre</TextBlock>
+            <TextBox></TextBox>
         </StackPanel>
 
-        <StackPanel x:Name="panelDireccion" Margin="0,0,0,10">
+        <StackPanel x:Name="panelDireccion">
             <StackPanel.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF39E5EE" Offset="0"/>
                     <GradientStop Color="White" Offset="1"/>
                 </LinearGradientBrush>
             </StackPanel.Background>
-            <TextBlock Margin="5,5,5,2" VerticalAlignment="Center" FontWeight="Bold" FontSize="16">Dirección</TextBlock>
-            <TextBox Margin="5,0,5,5" VerticalAlignment="Top"></TextBox>
+            <TextBlock>Dirección</TextBlock>
+            <TextBox></TextBox>
         </StackPanel>
 
-        <StackPanel x:Name="panelCorreo" Margin="0,0,0,10">
+        <StackPanel x:Name="panelCorreo">
             <StackPanel.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFEE1515" Offset="0"/>
                     <GradientStop Color="White" Offset="1"/>
                 </LinearGradientBrush>
             </StackPanel.Background>
-            <TextBlock Margin="5,5,5,2" VerticalAlignment="Center" FontWeight="Bold" FontSize="16">Correo electrónico</TextBlock>
-            <TextBox Margin="5,0,5,5" VerticalAlignment="Top" HorizontalAlignment="Left" Width="500"></TextBox>
+            <TextBlock>Correo electrónico</TextBlock>
+            <TextBox Style="{StaticResource PanelEscritura}"></TextBox>
         </StackPanel>
 
-        <StackPanel x:Name="panelBotones" Margin="0,0,0,10" Orientation="Horizontal" HorizontalAlignment="Right">
-            <Button Width="100" Margin="10">Aceptar</Button>
-            <Button Width="100" Margin="10">Cancelar</Button>
+        <StackPanel x:Name="panelBotones" Style="{StaticResource Botones}">
+            <Button>Aceptar</Button>
+            <Button>Cancelar</Button>
         </StackPanel>
     </StackPanel>
 </Window>
